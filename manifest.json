@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "template-mindful-morning-001",
+      "title": "Mindful Morning",
+      "category": "Routines",
+      "iconName": "🧘‍♀️",
+      "description": "A tailored routine to start your day with clarity.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/k-pb-templates/main/routines/mindful-morning.json"
+    },
+    {
+      "id": "playbook-hiit-energy-001",
+      "title": "7-Minute HIIT Energy Booster",
+      "category": "Wellness",
+      "iconName": "💥",
+      "description": "Boost your mood and metabolism in just 7 minutes.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/k-pb-templates/main/wellness/7-minute-hiit-booster.json"
+    },
+    {
+      "id": "workflow-pre-meeting-briefing-001",
+      "title": "Pre-Meeting Briefing",
+      "category": "Workflows",
+      "iconName": "🤝",
+      "description": "Ensure you are focused and ready for any important meeting.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/k-pb-templates/main/workflows/pre-meeting-briefing.json"
+    }
+  ]
+}
