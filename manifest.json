@@ -45,6 +45,15 @@
       "description": "GOD MODE. Secure your legacy. A classified system to organize assets, keys, and access for your designated Digital Executor. Prevent asset evaporation.",
       "isProTemplate": true,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/digital-estate-protocol.json"
+    },
+    {
+      "id": "template-weekly-defrag-001",
+      "title": "Weekly System Defrag",
+      "category": "Life Admin",
+      "iconName": "🔋",
+      "description": "Resynchronize your reality. A rapid-fire protocol to clear mental RAM, purge physical caches, and align temporal vectors (calendar) for the week ahead.",
+      "isProTemplate": false,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/weekly-system-defrag.json"
     }
   ]
 }
