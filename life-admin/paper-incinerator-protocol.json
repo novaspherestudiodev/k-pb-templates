@@ -1,0 +1,148 @@
+{
+  "id": "template-paper-incinerator-001",
+  "userId": "system",
+  "title": "Paperwork Incinerator",
+  "iconName": "🔥",
+  "category": "Life Admin",
+  "isProTemplate": false,
+  "createdAt": "2026-05-22T11:00:00.000Z",
+  "steps": [
+    {
+      "id": "step-01-briefing",
+      "title": "Protocol: SCORCHED EARTH",
+      "details": "Paper is inefficient. It burns, it rots, it gets lost. \n\nYour mission: Locate every loose sheet of paper in your habitat. Mail, receipts, forms. No survivors.",
+      "stepType": "displayNote",
+      "nextStepId": "step-02-aggregation"
+    },
+    {
+      "id": "step-02-aggregation",
+      "title": "The Gathering",
+      "details": "You have 2 minutes. Sprint through your habitat. Grab every piece of paper that is not permanently filed. Pile them on your desk.",
+      "stepType": "hybrid",
+      "nextStepId": "step-03-triage-logic",
+      "mode": "parallel",
+      "completionTrigger": "stepA",
+      "stepA": {
+        "id": "timer-gather",
+        "title": "Sweep Timer",
+        "stepType": "timer",
+        "durationSeconds": 120,
+        "autoContinue": false,
+        "allowOvertime": true,
+        "playSoundOnComplete": true
+      },
+      "stepB": {
+        "id": "note-volume",
+        "title": "Volume Estimate",
+        "stepType": "noteInput",
+        "prompt": "Est. number of items (e.g., 20)...",
+        "summarize": false
+      }
+    },
+    {
+      "id": "step-03-triage-logic",
+      "title": "Assess the Pile",
+      "details": "Look at the pile. What is the dominant material?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "Junk / Ads / Old Receipts",
+          "nextStepId": "step-04-shred",
+          "colorHex": "#FF3B30"
+        },
+        {
+          "label": "Official Docs / Bills / ID",
+          "nextStepId": "step-05-digitize",
+          "colorHex": "#007AFF"
+        }
+      ]
+    },
+    {
+      "id": "step-04-shred",
+      "title": "Immediate Destruction",
+      "details": "If it has no legal value, it is trash. If it has your name, SHRED it. If not, RECYCLE it.",
+      "stepType": "checkbox",
+      "nextStepId": "step-06-final-check",
+      "requireConfirmation": true,
+      "isMandatory": true,
+      "subItems": [
+        {
+          "id": "act-shred",
+          "text": "Shred sensitive junk (Credit offers, etc.)",
+          "isDone": false
+        },
+        {
+          "id": "act-recycle",
+          "text": "Recycle generic junk (Flyers, envelopes)",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "step-05-digitize",
+      "title": "Digitization Phase",
+      "details": "Do not file physical copies unless legally mandated (Birth Cert, Title). For everything else: Scan > Cloud > Trash.",
+      "stepType": "hybrid",
+      "nextStepId": "step-06-final-check",
+      "mode": "sequential",
+      "completionTrigger": "stepB",
+      "stepA": {
+        "id": "launcher-scan",
+        "title": "Launch Scanner",
+        "details": "Open your preferred scanning tool (Notes, Drive, etc).",
+        "stepType": "appLauncher",
+        "appName": "Scanning App",
+        "urlScheme": "https://drive.google.com"
+      },
+      "stepB": {
+        "id": "check-digitize",
+        "title": "Processing...",
+        "stepType": "checkbox",
+        "requireConfirmation": true,
+        "isMandatory": true,
+        "subItems": [
+          {
+            "id": "scan-01",
+            "text": "Scan document to PDF",
+            "isDone": false
+          },
+          {
+            "id": "scan-02",
+            "text": "Upload to Cloud (Tag: Year-Type)",
+            "isDone": false
+          },
+          {
+            "id": "scan-03",
+            "text": "Destroy physical copy (unless Vital)",
+            "isDone": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-06-final-check",
+      "title": "Surface Integrity",
+      "details": "The pile should be gone. Your desk should be visible. Verify zero physical debt.",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "Surface Clear (Victory)",
+          "nextStepId": "PLAYBOOK_END_SUCCESS",
+          "colorHex": "#34C759"
+        },
+        {
+          "label": "Items Remain (Retry)",
+          "nextStepId": "step-03-triage-logic",
+          "colorHex": "#FF9500"
+        }
+      ]
+    }
+  ],
+  "schedule": {
+    "id": "sched-paper-incinerator",
+    "playbookId": "template-paper-incinerator-001",
+    "repeatUnit": "monthly",
+    "repeatDays": [15],
+    "autoReset": true
+  }
+}
