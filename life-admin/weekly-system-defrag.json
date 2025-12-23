@@ -1,0 +1,158 @@
+{
+  "id": "template-weekly-defrag-001",
+  "userId": "system",
+  "title": "Weekly System Defrag",
+  "iconName": "🔋",
+  "category": "Life Admin",
+  "isProTemplate": false,
+  "createdAt": "2026-05-15T08:00:00.000Z",
+  "steps": [
+    {
+      "id": "step-01-init",
+      "title": "Initialize Sequence",
+      "details": "You are running on fragmented RAM. Your workspace is cluttered. Your calendar is a mystery.\n\nWe will fix this in 15 minutes. High tempo. No hesitation.",
+      "stepType": "displayNote",
+      "nextStepId": "step-02-brain-dump"
+    },
+    {
+      "id": "step-02-brain-dump",
+      "title": "RAM Extraction (Brain Dump)",
+      "details": "Extract every open loop from your neural cortex. Tasks, worries, ideas. Get them OUT of your head and onto the screen. Do not organize, just type.",
+      "stepType": "hybrid",
+      "nextStepId": "step-03-physical-purge",
+      "mode": "parallel",
+      "completionTrigger": "manual",
+      "stepA": {
+        "id": "timer-ram",
+        "title": "Extraction Window",
+        "stepType": "timer",
+        "durationSeconds": 180,
+        "autoContinue": false,
+        "allowOvertime": true,
+        "playSoundOnComplete": true
+      },
+      "stepB": {
+        "id": "input-ram",
+        "title": "The Buffer",
+        "stepType": "noteInput",
+        "prompt": "Feed the system...",
+        "summarize": true
+      }
+    },
+    {
+      "id": "step-03-physical-purge",
+      "title": "Physical Cache Clear",
+      "details": "Look at your immediate environment. Entropy has accumulated. Reset the grid.",
+      "stepType": "hybrid",
+      "nextStepId": "step-04-temporal-sync",
+      "mode": "parallel",
+      "completionTrigger": "stepB",
+      "stepA": {
+        "id": "timer-phys",
+        "title": "Velocity Timer",
+        "stepType": "timer",
+        "durationSeconds": 300,
+        "autoContinue": true,
+        "allowOvertime": true,
+        "playSoundOnComplete": true
+      },
+      "stepB": {
+        "id": "check-phys",
+        "title": "Reset Protocols",
+        "stepType": "checkbox",
+        "requireConfirmation": false,
+        "isMandatory": true,
+        "subItems": [
+          {
+            "id": "task-01",
+            "text": "Clear the primary workspace (Desk Zero)",
+            "isDone": false
+          },
+          {
+            "id": "task-02",
+            "text": "Process/Trash the 'Paper Pile'",
+            "isDone": false
+          },
+          {
+            "id": "task-03",
+            "text": "Empty all trash receptacles",
+            "isDone": false
+          },
+          {
+            "id": "task-04",
+            "text": "Restock biological fuel (Water/Snacks)",
+            "isDone": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-04-temporal-sync",
+      "title": "Temporal Sync (Calendar)",
+      "details": "Open your calendar. Look at the next 7 days. Identify collisions and opportunities.",
+      "stepType": "checkbox",
+      "nextStepId": "step-05-status-check",
+      "requireConfirmation": true,
+      "isMandatory": true,
+      "subItems": [
+        {
+          "id": "cal-01",
+          "text": "Identify the 'Big Rock' (Main Goal) for this week",
+          "isDone": false
+        },
+        {
+          "id": "cal-02",
+          "text": "Cancel/Reschedule low-value meetings",
+          "isDone": false
+        },
+        {
+          "id": "cal-03",
+          "text": "Set alarm times for tomorrow",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "step-05-status-check",
+      "title": "System Status",
+      "details": "Scan your internal state. Do you feel organized and ready to engage?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "Systems Nominal (Ready)",
+          "nextStepId": "step-06-ready",
+          "colorHex": "#00FF00"
+        },
+        {
+          "label": "Anxiety Detected (Overwhelmed)",
+          "nextStepId": "step-05b-breathe",
+          "colorHex": "#FF0000"
+        }
+      ]
+    },
+    {
+      "id": "step-05b-breathe",
+      "title": "Emergency Regulation",
+      "details": "You are over-revving. Disconnect for 60 seconds. Box breathe: In 4, Hold 4, Out 4, Hold 4.",
+      "stepType": "timer",
+      "durationSeconds": 60,
+      "nextStepId": "step-06-ready",
+      "autoContinue": true,
+      "playSoundOnComplete": true
+    },
+    {
+      "id": "step-06-ready",
+      "title": "Defrag Complete",
+      "details": "Your RAM is clear. Your environment is reset. You are no longer reacting; you are executing.\n\nGo dominate the timeline.",
+      "stepType": "displayNote",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ],
+  "schedule": {
+    "id": "sched-weekly-defrag",
+    "playbookId": "template-weekly-defrag-001",
+    "repeatUnit": "weekly",
+    "repeatDays": [7],
+    "autoReset": true
+  }
+}
