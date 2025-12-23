@@ -81,6 +81,15 @@
       "description": "A ruthless protocol to map your recurring expenses and terminate financial waste.",
       "isProTemplate": false,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/financial-leak-kill-protocol.json"
+    },
+    {
+      "id": "template-paper-incinerator-001",
+      "title": "Paperwork Incinerator",
+      "category": "Life Admin",
+      "iconName": "🔥",
+      "description": "The anti-hoarding protocol. Gather every scrap of paper, digitize the vital data, and shred the rest. Turn physical liabilities into digital zeros.",
+      "isProTemplate": false,
+     "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/paper-incinerator-protocol.json"
     }
   ]
 }
