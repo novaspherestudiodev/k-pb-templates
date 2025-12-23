@@ -98,7 +98,7 @@
       "iconName": "🗂️",
       "description": "A critical protocol to map your digital life and ensure your accounts can survive your absence.",
       "isProTemplate": true,
-      "url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/k-pb-templates/main/life-admin/digital-survivability-map.json"
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/digital-survivability-map.json"
     }
   ]
 }
