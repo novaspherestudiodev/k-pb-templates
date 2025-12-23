@@ -63,6 +63,15 @@
       "description": "A God Mode system to eliminate admin backlog. Force every incoming item into a decisive outcome and maintain permanent inbox zero.",
       "isProTemplate": true,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/life-admin-zero-inbox-protocol.json"
+    },
+    {
+      "id": "template-habitat-integrity-001",
+      "title": "Habitat Integrity Protocol",
+      "category": "Life Admin",
+      "iconName": "🛡️",
+      "description": "Defend your shelter against entropy. A quarterly engineering inspection of life support, filtration, and structural systems. Detect failures before they breach.",
+      "isProTemplate": false,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/habitat-integrity-protocol.json"
     }
   ]
 }
