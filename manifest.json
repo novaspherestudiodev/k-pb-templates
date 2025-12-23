@@ -90,6 +90,15 @@
       "description": "The anti-hoarding protocol. Gather every scrap of paper, digitize the vital data, and shred the rest. Turn physical liabilities into digital zeros.",
       "isProTemplate": false,
      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/paper-incinerator-protocol.json"
+    },
+    {
+      "id": "template-digital-survivability-godmode-002",
+      "title": "Digital Asset Survivability Map",
+      "category": "Life Admin",
+      "iconName": "🗂️",
+      "description": "A critical protocol to map your digital life and ensure your accounts can survive your absence.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/k-pb-templates/main/life-admin/digital-survivability-map.json"
     }
   ]
 }
