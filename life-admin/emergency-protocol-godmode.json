@@ -1,0 +1,131 @@
+{
+  "id": "template-emergency-protocol-godmode",
+  "userId": "system",
+  "title": "Emergency Protocol: God Mode",
+  "iconName": "🧯",
+  "category": "Life Admin",
+  "isProTemplate": false,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "steps": [
+    {
+      "id": "intro",
+      "title": "🚨 System Hardening Protocol",
+      "stepType": "displayNote",
+      "details": "Chaos favors the unprepared. This protocol does two things:\n\n1. Defines authority when you are incapacitated.\n2. Drills your physical readiness.\n\nExecute with intent.",
+      "nextStepId": "scenario-select"
+    },
+    {
+      "id": "scenario-select",
+      "title": "Select Threat Vector",
+      "stepType": "decision",
+      "details": "Which scenario are we addressing today?",
+      "options": [
+        {
+          "label": "🏥 Medical / Incapacitation",
+          "nextStepId": "auth-log",
+          "colorHex": "#E74C3C"
+        },
+        {
+          "label": "🔥 Fire / Physical Evac",
+          "nextStepId": "evac-drill-intro",
+          "colorHex": "#F39C12"
+        },
+        {
+          "label": "💻 Digital / Legacy Access",
+          "nextStepId": "digital-access",
+          "colorHex": "#8E44AD"
+        }
+      ]
+    },
+    {
+      "id": "auth-log",
+      "title": "Authority Delegation",
+      "stepType": "noteInput",
+      "prompt": "If you cannot speak, who speaks for you? (Name & Phone)",
+      "details": "Define your proxy immediately.",
+      "summarize": true,
+      "nextStepId": "location-log"
+    },
+    {
+      "id": "location-log",
+      "title": "Critical Document Location",
+      "stepType": "noteInput",
+      "prompt": "Where is the physical folder containing Insurance, ID, and Power of Attorney?",
+      "summarize": true,
+      "nextStepId": "end-success"
+    },
+    {
+      "id": "digital-access",
+      "title": "Digital Keys",
+      "stepType": "checkbox",
+      "details": "Ensure these trusted contacts have access.",
+      "isMandatory": true,
+      "nextStepId": "end-success",
+      "subItems": [
+        { "id": "d1", "text": "Partner has 1Password/LastPass Master Key", "isDone": false },
+        { "id": "d2", "text": "Legacy Contact set in Apple/Google ID", "isDone": false },
+        { "id": "d3", "text": "Kyt Digital Executor assigned", "isDone": false }
+      ]
+    },
+    {
+      "id": "evac-drill-intro",
+      "title": "⚠️ Drill Initiation",
+      "stepType": "displayNote",
+      "details": "You are about to enter a simulation. \n\nWhen you tap Next, a 2-minute timer will start. Your goal: Locate and touch every item in your 'Go Bag' checklist before the timer hits zero.\n\nDo not cheat. Speed is survival.",
+      "nextStepId": "hybrid-drill"
+    },
+    {
+      "id": "hybrid-drill",
+      "title": "⚡ 2-Minute Evacuation Drill",
+      "stepType": "hybrid",
+      "mode": "parallel",
+      "completionTrigger": "stepA",
+      "nextStepId": "drill-debrief",
+      "stepA": {
+        "id": "drill-timer",
+        "title": "T-Minus",
+        "stepType": "timer",
+        "durationSeconds": 120,
+        "autoContinue": true,
+        "playSoundOnComplete": true,
+        "allowOvertime": false
+      },
+      "stepB": {
+        "id": "drill-checklist",
+        "title": "Asset Verification",
+        "stepType": "checkbox",
+        "details": "Physically verify these items:",
+        "subItems": [
+          { "id": "bag-1", "text": "Passport / ID", "isDone": false },
+          { "id": "bag-2", "text": "Cash Stash", "isDone": false },
+          { "id": "bag-3", "text": "Hard Drive / Backup", "isDone": false },
+          { "id": "bag-4", "text": "Prescription Meds", "isDone": false },
+          { "id": "bag-5", "text": "Chargers / Power Bank", "isDone": false }
+        ]
+      }
+    },
+    {
+      "id": "drill-debrief",
+      "title": "After-Action Report",
+      "stepType": "noteInput",
+      "prompt": "What was missing? What took too long to find?",
+      "details": "Capture the failure points now so you don't die later.",
+      "summarize": true,
+      "nextStepId": "end-success"
+    },
+    {
+      "id": "end-success",
+      "title": "🛡️ Protocol Secure",
+      "stepType": "displayNote",
+      "details": "You have hardened this specific vector.\n\nReview your Logbook to see the summarized data of your emergency plan.",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ],
+  "schedule": {
+    "id": "sched-godmode",
+    "playbookId": "template-emergency-protocol-godmode",
+    "repeatUnit": "monthly",
+    "repeatDays": [1],
+    "autoReset": false
+  }
+}
