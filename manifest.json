@@ -99,6 +99,15 @@
       "description": "A critical protocol to map your digital life and ensure your accounts can survive your absence.",
       "isProTemplate": true,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/digital-survivability-map.json"
+    },
+    {
+      "id": "template-emergency-protocol-godmode",
+      "title": "Emergency Protocol: God Mode",
+      "category": "Life Admin",
+      "iconName": "🧯",
+      "description": "Don't just plan for emergencies—drill them. Includes live evacuation simulation.",
+      "isProTemplate": false,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/emergency-protocol-godmode.json"
     }
   ]
 }
