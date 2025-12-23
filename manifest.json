@@ -54,6 +54,15 @@
       "description": "Resynchronize your reality. A rapid-fire protocol to clear mental RAM, purge physical caches, and align temporal vectors (calendar) for the week ahead.",
       "isProTemplate": false,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/weekly-system-defrag.json"
+    },
+    {
+      "id": "template-zero-inbox-godmode-001",
+      "title": "Life Admin Zero-Inbox Protocol",
+      "category": "Life Admin",
+      "iconName": "📥",
+      "description": "A God Mode system to eliminate admin backlog. Force every incoming item into a decisive outcome and maintain permanent inbox zero.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/life-admin-zero-inbox-protocol.json"
     }
   ]
 }
