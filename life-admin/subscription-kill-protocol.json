@@ -1,0 +1,125 @@
+{
+  "id": "template-sub-kill-protocol-001",
+  "userId": "system",
+  "title": "Subscription Kill-List Protocol",
+  "iconName": "✂️",
+  "category": "Life Admin",
+  "isProTemplate": false,
+  "createdAt": "2026-05-12T09:00:00.000Z",
+  "steps": [
+    {
+      "id": "step-01-briefing",
+      "title": "Mission Briefing",
+      "details": "Most humans bleed wealth through 'micro-transactions'. A $15 subscription is not $15. It is $180 of your life force per year. \n\nToday, we stop the bleeding. \n\nPrepare your banking app or credit card statement. You need visibility on the last 30 days of transactions.",
+      "stepType": "checkbox",
+      "nextStepId": "step-02-audit-hybrid",
+      "requireConfirmation": false,
+      "isMandatory": true,
+      "subItems": [
+        {
+          "id": "sub-01",
+          "text": "Banking Portal / Statement Open",
+          "isDone": false
+        },
+        {
+          "id": "sub-02",
+          "text": "Mental State: Ruthless",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "step-02-audit-hybrid",
+      "title": "The Forensic Sprint",
+      "details": "You have 3 minutes. Scan your statement. Identify every recurring 'parasite' (Subscription). Do not judge yet, just capture.",
+      "stepType": "hybrid",
+      "nextStepId": "step-03-decision",
+      "mode": "parallel",
+      "completionTrigger": "manual",
+      "stepA": {
+        "id": "timer-audit",
+        "title": "Pressure Clock",
+        "stepType": "timer",
+        "durationSeconds": 180,
+        "autoContinue": false,
+        "allowOvertime": true,
+        "playSoundOnComplete": true
+      },
+      "stepB": {
+        "id": "input-audit",
+        "title": "The Kill List",
+        "details": "Type the name and cost of every subscription you see.",
+        "stepType": "noteInput",
+        "prompt": "e.g., Netflix ($15), Gym ($40), Forgotten App ($5)...",
+        "summarize": true
+      }
+    },
+    {
+      "id": "step-03-decision",
+      "title": "Triage The List",
+      "details": "Look at the list you just generated. Be honest. How many of these bring you genuine value versus how many are 'inertia taxes'?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "Detected Waste (Execute Purge)",
+          "nextStepId": "step-04-purge",
+          "colorHex": "#FF0000"
+        },
+        {
+          "label": "System Clean (All Essential)",
+          "nextStepId": "step-end-clean",
+          "colorHex": "#00FF00"
+        }
+      ]
+    },
+    {
+      "id": "step-04-purge",
+      "title": "Execution Phase",
+      "details": "Do not negotiate. If it is not essential, it dies today. Use the links below or go to your app store settings.",
+      "stepType": "checkbox",
+      "nextStepId": "step-05-calc",
+      "requireConfirmation": true,
+      "isMandatory": true,
+      "subItems": [
+        {
+          "id": "act-01",
+          "text": "Cancel 'Ghost' subscriptions (unused for >3 months)",
+          "isDone": false
+        },
+        {
+          "id": "act-02",
+          "text": "Downgrade tiers (Premium to Basic)",
+          "isDone": false
+        },
+        {
+          "id": "act-03",
+          "text": "Remove auto-renew on 'Free Trials'",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "step-05-calc",
+      "title": "Calculate the Bounty",
+      "details": "Add up the monthly cost of everything you just cancelled or downgraded. Multiply by 12.",
+      "stepType": "noteInput",
+      "prompt": "Total Annual Savings (e.g., $240)",
+      "nextStepId": "step-06-victory",
+      "summarize": true
+    },
+    {
+      "id": "step-06-victory",
+      "title": "Capital Recovered",
+      "details": "You have successfully reallocated resources back to your future self. That money is now yours to command, not theirs to steal.\n\nEnd Protocol.",
+      "stepType": "displayNote",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    },
+    {
+      "id": "step-end-clean",
+      "title": "System Integrity Verified",
+      "details": "Your audit reveals no parasites. You are running lean. Maintain vigilance.\n\nEnd Protocol.",
+      "stepType": "displayNote",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ]
+}
