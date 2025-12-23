@@ -1,0 +1,159 @@
+{
+  "id": "template-digital-survivability-godmode-002",
+  "userId": "SYSTEM_TEMPLATE",
+  "title": "Digital Asset Survivability Map",
+  "iconName": "🗂️",
+  "category": "Life Admin",
+  "isProTemplate": true,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "steps": [
+    {
+      "id": "survival-intro",
+      "title": "⚠️ System Fragility Alert",
+      "stepType": "displayNote",
+      "details": "Your life is a network of accounts.\n\nIf you are unavailable:\n• Can someone access essentials?\n• Can damage be contained?\n• Can value be recovered?\n\nThis protocol maps survivability.",
+      "nextStepId": "asset-scope-decision"
+    },
+    {
+      "id": "asset-scope-decision",
+      "title": "Select Asset Scope",
+      "stepType": "decision",
+      "details": "Which digital domains will you map right now?",
+      "options": [
+        {
+          "label": "💼 Financial Accounts",
+          "nextStepId": "identify-single-asset",
+          "colorHex": "#27AE60"
+        },
+        {
+          "label": "📧 Identity & Communication",
+          "nextStepId": "identify-single-asset",
+          "colorHex": "#2980B9"
+        },
+        {
+          "label": "🌐 Everything Digital",
+          "nextStepId": "identify-single-asset",
+          "colorHex": "#8E44AD"
+        }
+      ]
+    },
+    {
+      "id": "identify-single-asset",
+      "title": "Identify Target Asset",
+      "stepType": "noteInput",
+      "prompt": "Name ONE specific account or asset to audit (e.g., 'Primary Gmail', 'Chase Checking').",
+      "details": "We will audit one item at a time to ensure total coverage.",
+      "summarize": true,
+      "nextStepId": "access-decision"
+    },
+    {
+      "id": "access-decision",
+      "title": "Access Survivability Check",
+      "stepType": "decision",
+      "details": "If you are unavailable today, can this specific asset be accessed by your designated proxy?",
+      "options": [
+        {
+          "label": "🔓 Accessible & Documented",
+          "nextStepId": "access-proof-note",
+          "colorHex": "#2ECC71"
+        },
+        {
+          "label": "⚠️ Partially Accessible",
+          "nextStepId": "gap-analysis-note",
+          "colorHex": "#F1C40F"
+        },
+        {
+          "label": "❌ Single Point of Failure",
+          "nextStepId": "risk-flag-note",
+          "colorHex": "#E74C3C"
+        }
+      ]
+    },
+    {
+      "id": "access-proof-note",
+      "title": "Access Proof",
+      "stepType": "noteInput",
+      "prompt": "Where is the access key/password stored?",
+      "summarize": false,
+      "nextStepId": "next-asset-check"
+    },
+    {
+      "id": "gap-analysis-note",
+      "title": "Survivability Gap",
+      "stepType": "noteInput",
+      "prompt": "What is missing to make this asset survivable?",
+      "summarize": true,
+      "nextStepId": "next-asset-check"
+    },
+    {
+      "id": "risk-flag-note",
+      "title": "Critical Failure Flag",
+      "stepType": "noteInput",
+      "prompt": "Why is this asset a single point of failure?",
+      "summarize": true,
+      "nextStepId": "mitigation-decision"
+    },
+    {
+      "id": "mitigation-decision",
+      "title": "Failure Mitigation Decision",
+      "stepType": "decision",
+      "details": "How will you neutralize this risk right now?",
+      "options": [
+        {
+          "label": "🗝️ Add Recovery / Delegate Access",
+          "nextStepId": "mitigation-log",
+          "colorHex": "#3498DB"
+        },
+        {
+          "label": "📄 Document & Store Securely",
+          "nextStepId": "mitigation-log",
+          "colorHex": "#16A085"
+        },
+        {
+          "label": "🛑 Decommission Asset",
+          "nextStepId": "mitigation-log",
+          "colorHex": "#C0392B"
+        }
+      ]
+    },
+    {
+      "id": "mitigation-log",
+      "title": "Mitigation Log",
+      "stepType": "noteInput",
+      "prompt": "Record the action taken.",
+      "summarize": true,
+      "nextStepId": "next-asset-check"
+    },
+    {
+      "id": "next-asset-check",
+      "title": "More Assets to Map?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "➡️ Yes, audit next asset",
+          "nextStepId": "identify-single-asset",
+          "colorHex": "#7F8C8D"
+        },
+        {
+          "label": "🏁 No, map complete",
+          "nextStepId": "survival-complete",
+          "colorHex": "#2ECC71"
+        }
+      ]
+    },
+    {
+      "id": "survival-complete",
+      "title": "🛡️ Survivability Map Complete",
+      "stepType": "displayNote",
+      "details": "Your digital life is now hardened against absence.\n\nChaos has fewer entry points.",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ],
+  "schedule": {
+    "id": "sched-digital-survivability",
+    "playbookId": "template-digital-survivability-godmode-002",
+    "repeatUnit": "monthly",
+    "repeatDays": [1],
+    "autoReset": false
+  }
+}
