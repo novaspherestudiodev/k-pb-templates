@@ -18,6 +18,15 @@
       "description": "Ruthless financial triage. Identify parasitic recurring charges and sever the connection. High-speed audit mode enabled.",
       "isProTemplate": false,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/subscription-kill-protocol.json"
+    },
+    {
+      "id": "template-financial-leak-godmode-001",
+      "title": "Annual Financial Leak Map & Autonomous Kill Protocol",
+      "category": "Life Admin",
+      "iconName": "🧠",
+      "description": "God Mode financial control. Map yearly spending leaks, diagnose behavioral patterns, and install autonomous cancellation rules.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/annual-financial-leak-map-autonomous-kill-protocol.json"
     }
   ]
 }
