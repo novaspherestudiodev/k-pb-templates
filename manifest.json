@@ -27,6 +27,24 @@
       "description": "God Mode financial control. Map yearly spending leaks, diagnose behavioral patterns, and install autonomous cancellation rules.",
       "isProTemplate": true,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/annual-financial-leak-map-autonomous-kill-protocol.json"
+    },
+    {
+      "id": "template-paperwork-blackhole-001",
+      "title": "Digital Paperwork Black Hole Eliminator",
+      "category": "Life Admin",
+      "iconName": "🗂️",
+      "description": "A God Mode system to eliminate document chaos. Capture, classify, and retrieve paperwork without stress or repetition.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/digital-paperwork-black-hole-eliminator.json"
+    },
+    {
+      "id": "template-digital-estate-protocol-001",
+      "title": "Digital Estate Master Protocol",
+      "category": "Life Admin",
+      "iconName": "🏛️",
+      "description": "GOD MODE. Secure your legacy. A classified system to organize assets, keys, and access for your designated Digital Executor. Prevent asset evaporation.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/digital-estate-protocol.json"
     }
   ]
 }
