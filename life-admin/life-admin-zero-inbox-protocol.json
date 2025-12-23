@@ -1,0 +1,167 @@
+{
+  "id": "template-zero-inbox-godmode-001",
+  "userId": "SYSTEM_TEMPLATE",
+  "title": "Life Admin Zero-Inbox Protocol",
+  "iconName": "📥",
+  "category": "Life Admin",
+  "isProTemplate": true,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "steps": [
+    {
+      "id": "zero-intro",
+      "title": "🧠 Cognitive Load Alert",
+      "stepType": "displayNote",
+      "details": "Unprocessed inboxes steal attention.\n\nThis protocol:\n• Establishes ONE admin inbox\n• Forces every item into an outcome\n• Prevents backlog resurrection\n\nInbox zero is not cleanliness.\nIt is **control**.",
+      "nextStepId": "inbox-lock-decision"
+    },
+    {
+      "id": "inbox-lock-decision",
+      "title": "Select the ONE Admin Inbox",
+      "stepType": "decision",
+      "details": "All life admin enters here. No exceptions.",
+      "options": [
+        {
+          "label": "📧 Email",
+          "nextStepId": "inbox-definition-note",
+          "colorHex": "#3498DB"
+        },
+        {
+          "label": "📱 Notes App",
+          "nextStepId": "inbox-definition-note",
+          "colorHex": "#9B59B6"
+        },
+        {
+          "label": "📁 Task Manager",
+          "nextStepId": "inbox-definition-note",
+          "colorHex": "#2ECC71"
+        }
+      ]
+    },
+    {
+      "id": "inbox-definition-note",
+      "title": "Define Inbox Scope",
+      "stepType": "noteInput",
+      "prompt": "What types of items are allowed into this inbox? Be explicit.",
+      "summarize": true,
+      "nextStepId": "processing-hybrid"
+    },
+    {
+      "id": "processing-hybrid",
+      "title": "⚙️ Processing Sprint",
+      "stepType": "hybrid",
+      "mode": "parallel",
+      "completionTrigger": "stepA",
+      "stepA": {
+        "id": "processing-timer",
+        "title": "15-Minute Processing Window",
+        "stepType": "timer",
+        "details": "Process items. Do not complete tasks yet. Only decide outcomes.",
+        "durationSeconds": 900,
+        "autoContinue": true
+      },
+      "stepB": {
+        "id": "processing-note",
+        "title": "Unprocessed Items Snapshot",
+        "stepType": "noteInput",
+        "prompt": "List what is currently sitting in your inbox.",
+        "summarize": false
+      },
+      "nextStepId": "item-outcome-decision"
+    },
+    {
+      "id": "item-outcome-decision",
+      "title": "Assign Outcome to the NEXT Item",
+      "stepType": "decision",
+      "details": "Every item must resolve into an outcome.",
+      "options": [
+        {
+          "label": "⚡ Do Immediately (<5 min)",
+          "nextStepId": "do-now-note",
+          "colorHex": "#2ECC71"
+        },
+        {
+          "label": "📆 Schedule",
+          "nextStepId": "schedule-note",
+          "colorHex": "#3498DB"
+        },
+        {
+          "label": "🗂️ File / Reference",
+          "nextStepId": "file-note",
+          "colorHex": "#9B59B6"
+        },
+        {
+          "label": "🗑️ Delete / Ignore",
+          "nextStepId": "delete-confirm",
+          "colorHex": "#E74C3C"
+        }
+      ]
+    },
+    {
+      "id": "do-now-note",
+      "title": "Immediate Execution",
+      "stepType": "displayNote",
+      "details": "Do it now.\nMomentum is cheaper than storage.",
+      "nextStepId": "continue-processing"
+    },
+    {
+      "id": "schedule-note",
+      "title": "Scheduled Outcome",
+      "stepType": "noteInput",
+      "prompt": "When and where is this scheduled?",
+      "summarize": true,
+      "nextStepId": "continue-processing"
+    },
+    {
+      "id": "file-note",
+      "title": "Reference Filing",
+      "stepType": "noteInput",
+      "prompt": "Where is this stored so it can be found again?",
+      "summarize": true,
+      "nextStepId": "continue-processing"
+    },
+    {
+      "id": "delete-confirm",
+      "title": "Deletion Confirmation",
+      "stepType": "checkbox",
+      "details": "This item provides no value.",
+      "requireConfirmation": true,
+      "isMandatory": true,
+      "subItems": [
+        { "id": "d1", "text": "No action required", "isDone": false },
+        { "id": "d2", "text": "No future relevance", "isDone": false }
+      ],
+      "nextStepId": "continue-processing"
+    },
+    {
+      "id": "continue-processing",
+      "title": "More Items?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "➡️ Yes, next item",
+          "nextStepId": "item-outcome-decision",
+          "colorHex": "#7F8C8D"
+        },
+        {
+          "label": "✅ Inbox empty",
+          "nextStepId": "zero-success",
+          "colorHex": "#2ECC71"
+        }
+      ]
+    },
+    {
+      "id": "zero-success",
+      "title": "🏁 Inbox Zero Achieved",
+      "stepType": "displayNote",
+      "details": "Nothing is waiting.\nNothing is leaking attention.\n\nYou are operating at baseline clarity.",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ],
+  "schedule": {
+    "id": "sched-zero-inbox-godmode",
+    "playbookId": "template-zero-inbox-godmode-001",
+    "repeatUnit": "weekly",
+    "repeatDays": [1],
+    "autoReset": false
+  }
+}
