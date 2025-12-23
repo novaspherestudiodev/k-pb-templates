@@ -1,0 +1,125 @@
+{
+  "id": "template-subscription-killlist-001",
+  "userId": "SYSTEM_TEMPLATE",
+  "title": "Monthly Subscription Audit & Kill-List",
+  "iconName": "⚡",
+  "category": "Life Admin",
+  "isProTemplate": false,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "steps": [
+    {
+      "id": "intro-note",
+      "title": "⚠️ Mission Brief",
+      "stepType": "displayNote",
+      "details": "This is not budgeting. This is a purge.\n\nYou will:\n• Surface every recurring subscription\n• Classify each as ESSENTIAL, OPTIONAL, or WASTE\n• Terminate financial parasites immediately\n\nEstimated outcome: increased monthly surplus + psychological relief.",
+      "nextStepId": "focus-hybrid"
+    },
+    {
+      "id": "focus-hybrid",
+      "title": "🔒 Focus Lock: Financial Scan",
+      "stepType": "hybrid",
+      "mode": "parallel",
+      "completionTrigger": "stepA",
+      "stepA": {
+        "id": "scan-timer",
+        "title": "10-Minute Scan Window",
+        "stepType": "timer",
+        "details": "Open your bank or app store. Do nothing else. Scan for recurring charges only.",
+        "durationSeconds": 600,
+        "autoContinue": true
+      },
+      "stepB": {
+        "id": "scan-notes",
+        "title": "Detected Subscriptions",
+        "stepType": "noteInput",
+        "prompt": "List every subscription you see. One per line.",
+        "summarize": false
+      },
+      "nextStepId": "classification-decision"
+    },
+    {
+      "id": "classification-decision",
+      "title": "Classify the FIRST subscription on your list",
+      "stepType": "decision",
+      "details": "Be ruthless. Classification determines survival.",
+      "options": [
+        {
+          "label": "🟢 ESSENTIAL (Core life / income)",
+          "nextStepId": "essential-note",
+          "colorHex": "#2ECC71"
+        },
+        {
+          "label": "🟡 OPTIONAL (Nice, not needed)",
+          "nextStepId": "optional-note",
+          "colorHex": "#F1C40F"
+        },
+        {
+          "label": "🔴 WASTE (Why am I paying this?)",
+          "nextStepId": "kill-confirmation",
+          "colorHex": "#E74C3C"
+        }
+      ]
+    },
+    {
+      "id": "essential-note",
+      "title": "Essential Justification",
+      "stepType": "noteInput",
+      "prompt": "Why does this subscription earn survival status?",
+      "summarize": true,
+      "nextStepId": "next-item-check"
+    },
+    {
+      "id": "optional-note",
+      "title": "Optional Awareness Log",
+      "stepType": "noteInput",
+      "prompt": "If this vanished tomorrow, what would you actually lose?",
+      "summarize": true,
+      "nextStepId": "next-item-check"
+    },
+    {
+      "id": "kill-confirmation",
+      "title": "Confirm Termination",
+      "stepType": "checkbox",
+      "details": "This subscription is bleeding money.",
+      "requireConfirmation": true,
+      "isMandatory": true,
+      "subItems": [
+        { "id": "k1", "text": "I do not meaningfully use this", "isDone": false },
+        { "id": "k2", "text": "I forgot I was paying for this", "isDone": false },
+        { "id": "k3", "text": "I am ready to cancel it now", "isDone": false }
+      ],
+      "nextStepId": "kill-action"
+    },
+    {
+      "id": "kill-action",
+      "title": "Execute Cancellation",
+      "stepType": "displayNote",
+      "details": "Cancel it now. Not later.\n\nIf it requires friction, complete the friction.\nThis is the cost of reclaiming control.",
+      "nextStepId": "next-item-check"
+    },
+    {
+      "id": "next-item-check",
+      "title": "Continue the Audit?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "➡️ Yes, next subscription",
+          "nextStepId": "classification-decision",
+          "colorHex": "#3498DB" 
+        },
+        {
+          "label": "✅ No, audit complete",
+          "nextStepId": "success-end",
+          "colorHex": "#9B59B6"
+        }
+      ]
+    },
+    {
+      "id": "success-end",
+      "title": "💰 Mission Complete",
+      "stepType": "displayNote",
+      "details": "You are now objectively richer than you were 30 minutes ago.\n\nRun this protocol monthly.\nFinancial entropy only wins when ignored.",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ]
+}
