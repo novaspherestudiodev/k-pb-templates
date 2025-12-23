@@ -1,0 +1,150 @@
+{
+  "id": "template-financial-leak-godmode-001",
+  "userId": "SYSTEM_TEMPLATE",
+  "title": "Financial Leak Map & Kill Protocol",
+  "iconName": "💸",
+  "category": "Life Admin",
+  "isProTemplate": false,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "lastUsedAt": null,
+  "steps": [
+    {
+      "id": "fin-intro",
+      "title": "⚠️ Financial Integrity Alert",
+      "stepType": "displayNote",
+      "details": "Most money loss is silent.\nSubscriptions. Fees. Drift.\n\nThis protocol:\n• Maps ALL recurring outflows\n• Detects leaks\n• Forces a kill-or-justify decision\n\nNo passive spending survives.",
+      "nextStepId": "account-scope-decision"
+    },
+    {
+      "id": "account-scope-decision",
+      "title": "Select Financial Scope",
+      "stepType": "decision",
+      "details": "Which accounts are included in this sweep?",
+      "options": [
+        {
+          "label": "🏦 Bank Accounts",
+          "nextStepId": "data-gather-note",
+          "colorHex": "#2ECC71"
+        },
+        {
+          "label": "💳 Cards & Wallets",
+          "nextStepId": "data-gather-note",
+          "colorHex": "#3498DB"
+        },
+        {
+          "label": "🌐 All Sources",
+          "nextStepId": "data-gather-note",
+          "colorHex": "#9B59B6"
+        }
+      ]
+    },
+    {
+      "id": "data-gather-note",
+      "title": "Data Extraction",
+      "stepType": "noteInput",
+      "prompt": "List every recurring charge you can find (subscriptions, memberships, fees).",
+      "summarize": false,
+      "nextStepId": "leak-scan-timer"
+    },
+    {
+      "id": "leak-scan-timer",
+      "title": "⏱️ Leak Scan Window",
+      "stepType": "timer",
+      "details": "Scan statements. No judgments yet. Only identify.",
+      "durationSeconds": 1200,
+      "autoContinue": true,
+      "nextStepId": "leak-item-decision"
+    },
+    {
+      "id": "leak-item-decision",
+      "title": "Leak Classification — NEXT Item",
+      "stepType": "decision",
+      "details": "Every recurring charge must justify existence.",
+      "options": [
+        {
+          "label": "✅ Essential (Keep)",
+          "nextStepId": "keep-justification",
+          "colorHex": "#2ECC71"
+        },
+        {
+          "label": "⚠️ Questionable",
+          "nextStepId": "review-schedule",
+          "colorHex": "#F1C40F"
+        },
+        {
+          "label": "🛑 Leak (Kill)",
+          "nextStepId": "kill-confirmation",
+          "colorHex": "#E74C3C"
+        }
+      ]
+    },
+    {
+      "id": "keep-justification",
+      "title": "Essential Justification",
+      "stepType": "noteInput",
+      "prompt": "Why does this expense deserve to exist?",
+      "summarize": true,
+      "nextStepId": "next-leak-check"
+    },
+    {
+      "id": "review-schedule",
+      "title": "Scheduled Review",
+      "stepType": "noteInput",
+      "prompt": "When will this expense be reviewed or downgraded?",
+      "summarize": true,
+      "nextStepId": "next-leak-check"
+    },
+    {
+      "id": "kill-confirmation",
+      "title": "Autonomous Kill Authorization",
+      "stepType": "checkbox",
+      "details": "This expense provides insufficient value.",
+      "requireConfirmation": true,
+      "isMandatory": true,
+      "subItems": [
+        { "id": "k1", "text": "Low or zero usage", "isDone": false },
+        { "id": "k2", "text": "High cost-to-value ratio", "isDone": false }
+      ],
+      "nextStepId": "kill-action-note"
+    },
+    {
+      "id": "kill-action-note",
+      "title": "Kill Execution Log",
+      "stepType": "noteInput",
+      "prompt": "How was this cancelled or neutralized?",
+      "summarize": true,
+      "nextStepId": "next-leak-check"
+    },
+    {
+      "id": "next-leak-check",
+      "title": "More Recurring Charges?",
+      "stepType": "decision",
+      "options": [
+        {
+          "label": "➡️ Yes, next charge",
+          "nextStepId": "leak-item-decision",
+          "colorHex": "#7F8C8D"
+        },
+        {
+          "label": "📊 No, map complete",
+          "nextStepId": "financial-report",
+          "colorHex": "#2ECC71"
+        }
+      ]
+    },
+    {
+      "id": "financial-report",
+      "title": "📈 Leak Summary",
+      "stepType": "displayNote",
+      "details": "You now have:\n• A full recurring expense map\n• Identified leaks\n• Executed kills\n\nYour financial system is cleaner and harder to exploit.",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ],
+  "schedule": {
+    "id": "sched-financial-leak-godmode",
+    "playbookId": "template-financial-leak-godmode-001",
+    "repeatUnit": "monthly",
+    "repeatDays": [1],
+    "autoReset": false
+  }
+}
