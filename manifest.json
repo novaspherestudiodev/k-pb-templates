@@ -9,7 +9,15 @@
       "description": "A high-voltage system to identify, classify, and terminate wasted recurring expenses. Feel richer in under 30 minutes.",
       "isProTemplate": false,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/monthly-subscription-audit-kill-list.json"
+    },
+    {
+      "id": "template-sub-kill-protocol-001",
+      "title": "Subscription Kill-List Protocol",
+      "category": "Life Admin",
+      "iconName": "✂️",
+      "description": "Ruthless financial triage. Identify parasitic recurring charges and sever the connection. High-speed audit mode enabled.",
+      "isProTemplate": false,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/subscription-kill-protocol.json"
     }
-
   ]
 }
