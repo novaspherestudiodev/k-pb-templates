@@ -108,6 +108,15 @@
       "description": "Don't just plan for emergencies—drill them. Includes live evacuation simulation.",
       "isProTemplate": false,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/life-admin/emergency-protocol-godmode.json"
+    },
+    {
+      "id": "playbook-neuro-activation-morning-FINAL",
+      "title": "The Neuro-Activation Protocol",
+      "category": "Routines",
+      "iconName": "⚡",
+      "description": "A high-voltage protocol to transition from sleep to action. Features system diagnostics, audio reprogramming, and kinetic priming.",
+      "isProTemplate": true,
+      "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/routines/neuro-activation-protocol.json"
     }
   ]
 }
