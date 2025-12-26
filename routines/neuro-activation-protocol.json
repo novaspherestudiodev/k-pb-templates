@@ -1,0 +1,100 @@
+{
+  "id": "playbook-neuro-activation-morning-FINAL",
+  "userId": "SYSTEM_TEMPLATE",
+  "title": "The Neuro-Activation Protocol",
+  "iconName": "⚡",
+  "category": "Routines",
+  "isProTemplate": true,
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "steps": [
+    {
+      "id": "step-001-status-check",
+      "stepType": "decision",
+      "title": "SYSTEM DIAGNOSTIC",
+      "details": "Assess cortical function immediately upon waking. The protocol adapts, but weakness is not rewarded.",
+      "options": [
+        {
+          "label": "System Critical (Groggy)",
+          "nextStepId": "step-020-hybrid-reboot",
+          "colorHex": "#FF4D4D"
+        },
+        {
+          "label": "Systems Nominal (Ready)",
+          "nextStepId": "step-030-kinetic-charge",
+          "colorHex": "#00FF9C"
+        }
+      ]
+    },
+    {
+      "id": "step-020-hybrid-reboot",
+      "title": "FORCED REBOOT SEQUENCE",
+      "stepType": "hybrid",
+      "details": "Ingest 500ml H2O and expose retinas to light. Audio reprogramming initiating.",
+      "mode": "parallel",
+      "completionTrigger": "stepB",
+      "nextStepId": "step-030-kinetic-charge",
+      "stepA": {
+        "id": "media-reprogram",
+        "title": "Audio Reprogramming",
+        "stepType": "media",
+        "sourceType": "onlineUrl",
+        "source": "https://www.youtube.com/watch?v=IdTMDpizis8",
+        "mediaType": "video",
+        "creatorName": "Jocko Podcast",
+        "mediaTitle": "GOOD (2016)",
+        "details": "Internalize the doctrine: Problems are opportunities."
+      },
+      "stepB": {
+        "id": "timer-sunlight",
+        "title": "Solar Charge Window",
+        "stepType": "timer",
+        "durationSeconds": 140,
+        "autoContinue": true,
+        "allowOvertime": true,
+        "playSoundOnComplete": true,
+        "details": "Drink water. Face the light source."
+      }
+    },
+    {
+      "id": "step-030-kinetic-charge",
+      "stepType": "counter",
+      "title": "KINETIC IGNITION",
+      "details": "Explosive movement only. Spike heart rate to 120bpm.",
+      "target": 15,
+      "unit": "Jump Squats",
+      "mode": "manual",
+      "incrementValue": 1,
+      "nextStepId": "step-040-commitment-lock"
+    },
+    {
+      "id": "step-040-commitment-lock",
+      "stepType": "question",
+      "title": "COMMITMENT LOCK-IN",
+      "details": "Momentum must be acknowledged to persist.",
+      "questionType": "multipleChoice",
+      "options": [
+        {
+          "id": "opt-yes",
+          "text": "I am fully online.",
+          "isCorrect": true
+        },
+        {
+          "id": "opt-no",
+          "text": "I am resisting.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Resistance equals reset. Momentum requires consent.",
+      "allowRetry": false,
+      "onCorrectNextStepId": "PLAYBOOK_END_SUCCESS",
+      "onIncorrectNextStepId": "PLAYBOOK_END_FAILURE"
+    }
+  ],
+  "schedule": {
+    "id": "sched-neuro-activation",
+    "playbookId": "playbook-neuro-activation-morning-FINAL",
+    "repeatUnit": "daily",
+    "repeatDays": [1, 2, 3, 4, 5, 6, 7],
+    "autoReset": true
+  }
+}
