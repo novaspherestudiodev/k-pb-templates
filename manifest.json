@@ -117,6 +117,15 @@
       "description": "A high-voltage protocol to transition from sleep to action. Features system diagnostics, audio reprogramming, and kinetic priming.",
       "isProTemplate": true,
       "url": "https://raw.githubusercontent.com/novaspherestudiodev/k-pb-templates/refs/heads/main/routines/neuro-activation-protocol.json"
+    },
+    {
+      "id": "template-routine-dopamine-menu",
+      "title": "Morning Dopamine Menu",
+      "category": "Routines",
+      "iconName": "🧠",
+      "description": "As seen on TikTok! The viral ADHD-friendly protocol to jumpstart your brain.",
+      "isProTemplate": false,
+      "url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/k-pb-templates/main/routines/morning-dopamine-menu.json"
     }
   ]
 }
