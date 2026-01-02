@@ -1,0 +1,99 @@
+{
+  "id": "template-routine-dopamine-menu",
+  "userId": "SYSTEM_TEMPLATE",
+  "title": "Morning Dopamine Menu",
+  "iconName": "🧠",
+  "category": "Routines",
+  "isProTemplate": false,
+  "createdAt": "2026-01-01T08:00:00.000Z",
+  "lastUsedAt": null,
+  "steps": [
+    {
+      "id": "step-01-status",
+      "stepType": "decision",
+      "title": "Status Check",
+      "details": "Don't overthink it. How is the brain feeling right now?",
+      "options": [
+        {
+          "label": "Brain Fog ☁️",
+          "nextStepId": "step-01a-reset",
+          "colorHex": "#FF4D4D"
+        },
+        {
+          "label": "Laser Focused ⚡",
+          "nextStepId": "step-02-hybrid",
+          "colorHex": "#00FF9C"
+        }
+      ]
+    },
+    {
+      "id": "step-01a-reset",
+      "stepType": "displayNote",
+      "title": "Sensory Reset Required",
+      "details": "Stop. Close your eyes.\n\nTake 3 deep breaths in through the nose, out through the mouth.\n\nReset the system before engaging.",
+      "nextStepId": "step-02-hybrid"
+    },
+    {
+      "id": "step-02-hybrid",
+      "title": "10-Min Focus Sprint",
+      "stepType": "hybrid",
+      "details": "Do not leave this screen until the timer hits zero.",
+      "mode": "parallel",
+      "completionTrigger": "stepA",
+      "nextStepId": "step-03-reward",
+      "stepA": {
+        "id": "timer-focus",
+        "title": "Dopamine Timer",
+        "stepType": "timer",
+        "durationSeconds": 600,
+        "autoContinue": true,
+        "playSoundOnComplete": true,
+        "allowOvertime": false
+      },
+      "stepB": {
+        "id": "note-braindump",
+        "title": "The One Task",
+        "stepType": "noteInput",
+        "prompt": "What is the ONE thing you are doing right now?",
+        "summarize": true
+      }
+    },
+    {
+      "id": "step-03-reward",
+      "stepType": "decision",
+      "title": "Choose Your Reward",
+      "details": "You did the work. Pick your dopamine hit.",
+      "options": [
+        {
+          "label": "☕ Coffee / Tea",
+          "nextStepId": "step-04-done",
+          "colorHex": "#D35400"
+        },
+        {
+          "label": "🚶 Walk Outside",
+          "nextStepId": "step-04-done",
+          "colorHex": "#2ECC71"
+        },
+        {
+          "label": "📱 5 Mins Scroll",
+          "nextStepId": "step-04-done",
+          "colorHex": "#9B59B6"
+        }
+      ]
+    },
+    {
+      "id": "step-04-done",
+      "title": "Momentum Ignited",
+      "stepType": "displayNote",
+      "details": "You broke the inertia. The hardest part is over.\n\nKeep going.",
+      "nextStepId": "PLAYBOOK_END_SUCCESS"
+    }
+  ],
+  "schedule": {
+    "id": "sched-dopamine-menu",
+    "playbookId": "template-routine-dopamine-menu",
+    "repeatUnit": "daily",
+    "repeatDays": [1, 2, 3, 4, 5],
+    "autoReset": true
+  }
+}
